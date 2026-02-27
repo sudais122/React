@@ -1,7 +1,7 @@
 import React, { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
-import { Code, Math } from './Apps.jsx'
+import { Code, Math,Mains} from './Apps.jsx'
 
 function Main(){
   return(
@@ -23,9 +23,9 @@ const ReactElement = React.createElement(
 createRoot(document.getElementById('root')).render(
   <>
     {ReactElement}
-    <App />
+    <Main />
     <Code />
     <Math />
-    <Main /> 
+    <Mains/>
   </>
 )

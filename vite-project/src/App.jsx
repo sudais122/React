@@ -5,4 +5,5 @@ function App() {
     <h1>Hello {Name}</h1>
   )
 }
+
 export default App

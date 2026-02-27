@@ -9,4 +9,13 @@ function Math(){
         <h5>2+2=4</h5>
     )
 }
-export {Code,Math};
+
+function Mains(){
+    const name = "Sudais";
+    return(
+        <>
+        <h1>Hello this is inside the main.jsx {name}</h1>
+        </>
+    )
+}
+export {Code,Math,Mains};
