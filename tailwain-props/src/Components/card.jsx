@@ -26,4 +26,14 @@ function Card(props){
     )
 }
 
+
+function card(){
+  return(
+    <>
+    <div className="w-2xl h-12 bg-amber-400 flex items-center justify-center rounded-2xl">
+      <p className="text-amber-600">Hello text</p>
+    </div>
+    </>   
+  )
+}
 export default Card;
