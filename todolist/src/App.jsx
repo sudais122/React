@@ -12,7 +12,7 @@ function App() {
       setInput("");
     }
   };
-
+  
   const removeTask = (index) => {
     setTasks(tasks.filter((_, i) => i !== index));
   };
