@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.maindiv {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 12px;
+}
+
+.head {
+    font-size: 1.75rem;
+    margin-bottom: 25px;
+    color: #2663eb;
+    text-align: center;
+    font-weight: 700;
+}
+
+.inputGroup {
+    margin-bottom: 20px;
+}
+
+.label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.input, .select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input:focus, .select:focus {
+    outline: none;
+    border-color: #2663eb;
+    box-shadow: 0 0 0 3px rgba(38, 99, 235, 0.1);
+}
+
+.converterRow {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.selectGroup {
+    flex: 2;
+}
+
+.swapContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.swapBtn {
+    width: 45px;
+    height: 45px;
+    background-color: #f3f4f6;
+    border: 1px solid #d1d5db;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #2663eb;
+    transition: background 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swapBtn:hover {
+    background-color: #2663eb;
+    color: white;
+    transform: rotate(180deg);
+}
+
+.convertBtn {
+    width: 100%;
+    padding: 15px;
+    background-color: #2663eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background 0.3s;
+}
+
+.convertBtn:hover {
+    background-color: #1d4ed8;
+}
+
+.resultDiv {
+    display: block;
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #f8faff;
+    border-radius: 8px;
+}
+
+.exchangeRate {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 5px;
+}
+
+.finalAmount {
+    font-size: 1.5rem;
+    color: #111827;
+    font-weight: 700;
+}
+
+/* Ensure the button stays at the bottom */
+.convertBtn {
+    margin-top: auto; 
+}
