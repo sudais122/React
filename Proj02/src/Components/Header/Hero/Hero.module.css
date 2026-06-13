@@ -1,0 +1,17 @@
+.main{
+    font-family: sans-serif;
+}
+.main h1{
+    font-size: 4rem;
+    padding-top: 10rem;
+}
+.main h5{
+    padding-top: 2rem;
+    color: gray;
+    font-weight: 400;
+}
+.arrow{
+    width: 65px;
+    height: 65px;
+    padding-top: 10rem;
+}
