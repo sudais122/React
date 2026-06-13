@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 12px rgba(100, 100, 111, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-family: sans-serif;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+/* ---- Logo / Brand ---- */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0;
+}
+
+.brand-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #14142b;
+  letter-spacing: -0.5px;
+}
+
+/* ---- Nav Links ---- */
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #55556d;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.nav-links li a:hover {
+  color: #14142b;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ff9900;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* ---- Action Buttons ---- */
+.navbar-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn-login {
+  padding: 10px 20px;
+  border: 1.5px solid #d5d5dd;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #14142b;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-login:hover {
+  background-color: #f5f5f8;
+  border-color: #b8b8c4;
+}
+
+.btn-signup {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: #14142b;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-signup:hover {
+  background-color: #2b2b4d;
+  transform: translateY(-2px);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .navbar-actions {
+    gap: 8px;
+  }
+
+  .btn-login,
+  .btn-signup {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}

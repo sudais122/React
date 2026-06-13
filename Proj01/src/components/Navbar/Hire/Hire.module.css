@@ -1,0 +1,15 @@
+.hire button {
+  cursor: pointer;
+  color: #14142b;
+  border: 2px solid #14142b;
+  background-color: transparent;
+  padding: 13px 32px;
+  font-weight: 700;
+  font-family: sans-serif;
+  font-size: 15px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
