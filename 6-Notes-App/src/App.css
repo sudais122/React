@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #f0f2f5;
+  color: #1a1a1a;
+}
+
+/* The fragment renders these two side by side */
+#root {
+  display: flex;
+  gap: 24px;
+  padding: 32px;
+  min-height: 100vh;
+}
+
+/* ---------- Left: Add Notes form ---------- */
+.Left {
+  flex: 1;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.Left form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.Left h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.Left input {
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.Left input:focus {
+  border-color: #4f46e5;
+}
+
+/* Taller description field (scoped to the form so it
+   doesn't affect the #description <p> in Recent Notes) */
+.Left #description {
+  height: 100px;
+  padding-top: 12px;
+}
+
+.Left button {
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  background: #4f46e5;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.Left button:hover {
+  background: #4338ca;
+}
+
+/* ---------- Right: Recent Notes ---------- */
+.Right {
+  display: flex;
+    flex-direction: column;
+    gap: 10px;
+  flex: 1;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.Right > p {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.Recent {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "heading delete"
+    "description delete";
+  gap: 8px 12px;
+  align-items: start;
+}
+
+#heading {
+  grid-area: heading;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#description {
+  grid-area: description;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+#Del {
+  grid-area: delete;
+  align-self: center;
+  padding: 6px 14px;
+  font-size: 13px;
+  color: #ffffff;
+  background: #ef4444;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.Error{
+  color: red;
+}
+#Del:hover {
+  background: #dc2626;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  #root {
+    flex-direction: column;
+  }
+}
