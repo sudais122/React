@@ -1,0 +1,314 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0e1015;
+  --surface: #181b23;
+  --surface-2: #1f232d;
+  --border: #2a2f3a;
+  --text: #e6e8ee;
+  --muted: #8b909e;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --green: #22c55e;
+  --red: #f43f5e;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ---------- Layout: fills the full screen ---------- */
+.container {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 24px;
+  padding: 24px;
+  height: 100vh;
+}
+
+/* ---------- Left: Form panel (fills height) ---------- */
+.left {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #818cf8, #6366f1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title::after {
+  content: "Track your money in real time";
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 6px;
+  -webkit-text-fill-color: var(--muted);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input {
+  padding: 14px 16px;
+  font-size: 15px;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input::placeholder {
+  color: var(--muted);
+}
+
+.input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
+}
+
+.input option {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.btn {
+  padding: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--accent);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+  background: var(--accent-hover);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* ---------- Right: Dashboard ---------- */
+.right {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 20px;
+  min-height: 0; /* allows the transactions area to scroll */
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px;
+}
+
+/* Balance hero */
+.balance {
+  text-align: center;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.balance::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 240px;
+  height: 240px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.balance h2 {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 8px;
+}
+
+.balance h3 {
+  font-size: 44px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Income / Expense summary */
+.income-expense {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.income-expense > div {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px;
+  position: relative;
+}
+
+.income-expense > div::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 22px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.income-expense > div:first-child::before { background: var(--green); }
+.income-expense > div:last-child::before { background: var(--red); }
+
+.income-expense h3 {
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  padding-left: 16px;
+}
+
+p.income {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+p.expense {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--red);
+}
+
+/* ---------- Transactions (fills remaining height) ---------- */
+.transactions {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.transactions h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.transaction {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--surface-2);
+  padding: 14px 18px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  border-left: 4px solid transparent;
+  transition: transform 0.15s, background 0.2s;
+}
+
+.transaction:hover {
+  background: #262b36;
+  transform: translateX(4px);
+}
+
+.transaction.income { border-left-color: var(--green); }
+.transaction.expense { border-left-color: var(--red); }
+
+.transaction span:first-child {
+  font-weight: 500;
+}
+
+.transaction span:nth-child(2) {
+  margin-left: auto;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.transaction.income span:nth-child(2) { color: var(--green); }
+.transaction.expense span:nth-child(2) { color: var(--red); }
+
+.delete {
+  width: 30px;
+  height: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.delete:hover {
+  color: #ffffff;
+  background: var(--red);
+  border-color: var(--red);
+}
+
+/* Scroll the list, not the page */
+.transactions {
+  overflow-y: auto;
+}
+
+.transactions::-webkit-scrollbar {
+  width: 6px;
+}
+
+.transactions::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 820px) {
+  .container {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .left {
+    justify-content: flex-start;
+  }
+}
+.Err {
+  color: red;
+  font-size: 13px;
+  margin: 6px 0;
+}

@@ -36,7 +36,7 @@ const App = () => {
 
         {/* render one row per task in the array */}
         {tasks.map((task, index) => (
-          <div className='Task-Box' key={index}>
+           <div className='Task-Box' key={index}>
             <input type="checkbox" />
             <p>{task}</p>
             <p onClick={() => handleRemove(index)}>Remove</p>
