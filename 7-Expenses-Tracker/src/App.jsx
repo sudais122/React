@@ -11,6 +11,8 @@ const App = () => {
   const [totalIncome, setTotalIncome] = useState(0);
   const [totalExpense, setTotalExpense] = useState(0);
 
+  const [History, setHistory] = useState([])
+
   function handleInputs(e) {
     e.preventDefault();
 
@@ -40,12 +42,22 @@ const App = () => {
       setBalance(prev => prev - amount);
     }
 
-    // reset form
     setTitle("");
     setIncome("");
     setType("");
   }
 
+  function RecHistory(){
+    setHistory([...History,{
+      income,
+      title,
+      type,
+    }])
+  }
+
+  function HnadleRemvoe(indextoremove){
+    setHistory(History.filter((_,i) => i !== indextoremove))
+  }
   return (
     <div className="container">
 
@@ -83,7 +95,7 @@ const App = () => {
 
           <p className="Err">{inputErr}</p>
 
-          <button className="btn" type="submit">
+          <button className="btn" type="submit" onClick={RecHistory}>
             Add Transaction
           </button>
 
@@ -113,20 +125,18 @@ const App = () => {
         <div className="transactions">
           <h2>History</h2>
 
-          <div className="transaction income">
-            <span>Salary</span>
-            <span>+5000</span>
-            <button className="delete">X</button>
-          </div>
+        {History.map((Details,index)=>(
+          <div className="transaction income" key = {index}>
+            <span>{Details.title}</span>
 
-          <div className="transaction expense">
-            <span>Rent</span>
-            <span>-2000</span>
-            <button className="delete">X</button>
+            <span>
+              <span>{Details.type === 'income' ? '+' : '-'}</span>
+            <span>{Details.income}</span>
+            </span>
+            <button className="delete" onClick={()=> {HnadleRemvoe(index)}}>X</button>
           </div>
-
+        ))}
         </div>
-
       </div>
 
     </div>
