@@ -3,13 +3,11 @@ import './App.css';
 
 const App = () => {
   const [data, setdata] = useState([]);
-  const [loading, setloading] = useState(false)
 
   async function APIFUN() {
     const Respose = await fetch('https://picsum.photos/v2/list');
     const Data = await Respose.json();
     setdata(Data);
-    setloading(false);
   }
 
   return (
@@ -20,7 +18,7 @@ const App = () => {
       </header>
 
       <div className="gallery">
-        {loading ? <p>Loading...</p> : data.map((elem) => (
+        {data.map((elem) => (
           <article className="card" key={elem.id}>
             <div className="card-media">
               <img src={elem.download_url} alt={`Photo by ${elem.author}`} />
@@ -32,7 +30,7 @@ const App = () => {
                 <span>{elem.width} × {elem.height}</span>
               </div>
               <a className="card-download" href={elem.download_url} target="_blank" rel="noreferrer">
-                Download ↓
+                Download 
               </a>
             </div>
           </article>
