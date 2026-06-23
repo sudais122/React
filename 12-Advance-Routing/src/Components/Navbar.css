@@ -48,3 +48,9 @@
 .navbar-btn:hover {
   background-color: #1d4ed8;
 }
+.BtnDiv{
+  width: 100vw;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}

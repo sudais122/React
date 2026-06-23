@@ -10,11 +10,13 @@ import NotFound from './Pages/notfound'
 import Menz from './Pages/Menz'
 import  Women  from './Pages/Women'
 import ProductDetail from './Pages/ProductDetail'
+import Navbar2 from './Components/Navbar2'
 
 const App = () => {
   return (
     <>
     <Navbar />
+    <Navbar2 />
     <Routes>
       <Route path='/' element={<Home/>}></Route>
       <Route path='/Contact' element={<Contact/>}></Route>

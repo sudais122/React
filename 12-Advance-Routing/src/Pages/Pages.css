@@ -3,6 +3,7 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 48px 24px;
+  font-family: sans-serif;
   text-align: center;
 }
 
@@ -12,7 +13,14 @@
   color: #1f2937;
   margin-bottom: 16px;
 }
-
+.Button{
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #6b7280;
+  color: white;
+  cursor: pointer;
+}
 .page-text {
   font-size: 16px;
   color: #4b5563;

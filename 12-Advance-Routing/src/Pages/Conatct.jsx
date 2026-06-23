@@ -1,7 +1,13 @@
 import React from 'react'
 import './Pages.css'
+import { useNavigate } from 'react-router-dom'
 
 const Contact = () => {
+  let navigate=useNavigate();
+
+  function BacktoHome(){
+      navigate('/');
+  }
   return (
     <section className="page">
       <h1 className="page-title">Contact Us</h1>
